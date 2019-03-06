@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +9,7 @@ public class Player : MonoBehaviour
     private string turnInputAxisH = "Horizontal";
     private string turnInputAxisV = "Vertical";
     private string moveInput = "Vertical";
+    public Slider fuelSlider;
 
     public float rotationRate = 30;
 
@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
         //player = GetComponent<Rigidbody>();
         EulerAngleVelocity = new Vector3(0, 10, 0);
         player = GetComponent<Rigidbody>();
+        fuelSlider.minValue = 0;
+        fuelSlider.maxValue = 100;
+        fuelSlider.value = 100;
     }
 
     // Update is called once per frame
@@ -57,12 +60,20 @@ public class Player : MonoBehaviour
     // read each input
     private void turnH(float input)
     {
-        transform.Rotate(0, input * rotationRate * Time.deltaTime, 0);
+        if (input != 0f)
+        {
+            transform.Rotate(0, input * rotationRate * Time.deltaTime, 0);
+            fuelSlider.value -= 0.1f;
+        }
     }
 
     private void turnV(float input)
     {
-        transform.Rotate(input * rotationRate * Time.deltaTime, 0, 0);
+        if (input != 0f)
+        {
+            transform.Rotate(input * rotationRate * Time.deltaTime, 0, 0);
+            fuelSlider.value -= 0.1f;
+        }
     }
 
     private void moveF(bool input)
@@ -77,6 +88,7 @@ public class Player : MonoBehaviour
             //transform.position = movement * Time.deltaTime;
             //player.AddForce(movement * 25);
             moveSpeed += 0.001f;
+            fuelSlider.value -= 0.3f;
         }
     }
 
@@ -87,6 +99,7 @@ public class Player : MonoBehaviour
             //transform.Translate(Vector3.forward * -1 * moveSpeed);
 
             moveSpeed -= 0.001f;
+            fuelSlider.value -= 0.3f;
         }
     }
 
@@ -109,6 +122,7 @@ public class Player : MonoBehaviour
                 }
             }
             moveSpeed = 0f;
+            fuelSlider.value -= 3f;
         }
     }
 
