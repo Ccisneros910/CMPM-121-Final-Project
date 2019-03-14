@@ -18,4 +18,12 @@ public class Obstacle : MonoBehaviour
         }
         else current = (current + 1) % target.Length;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(this.tag =="damage" && collision.gameObject.name == "SpaceMan")
+        {
+            Debug.Log("spaceman hit!");
+        }
+    }
 }

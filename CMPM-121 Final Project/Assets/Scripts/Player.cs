@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private string moveInput = "Vertical";
     public Slider fuelSlider;
 
-    public float rotationRate = 30;
+    public float rotationRate = 45;
 
     public float moveSpeed = 0f;
 
@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
         if (input != 0f)
         {
             transform.Rotate(0, input * rotationRate * Time.deltaTime, 0);
-            fuelSlider.value -= 0.1f;
+            fuelSlider.value -= 0.01f;
         }
     }
 
@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
         if (input != 0f)
         {
             transform.Rotate(input * rotationRate * Time.deltaTime, 0, 0);
-            fuelSlider.value -= 0.1f;
+            fuelSlider.value -= 0.01f;
         }
     }
 
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
             //transform.position = movement * Time.deltaTime;
             //player.AddForce(movement * 25);
             moveSpeed += 0.001f;
-            fuelSlider.value -= 0.3f;
+            fuelSlider.value -= 0.05f;
         }
     }
 
@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
             //transform.Translate(Vector3.forward * -1 * moveSpeed);
 
             moveSpeed -= 0.001f;
-            fuelSlider.value -= 0.3f;
+            fuelSlider.value -= 0.05f;
         }
     }
 
@@ -111,18 +111,18 @@ public class Player : MonoBehaviour
             {
                 while(moveSpeed > 0)
                 {
-                    moveSpeed -= 0.002f;
+                    moveSpeed -= 0.000000001f;
                 }
             }
             else if (moveSpeed < 0)
             {
                 while (moveSpeed < 0)
                 {
-                    moveSpeed += 0.002f;
+                    moveSpeed += 0.00000001f;
                 }
             }
-            moveSpeed = 0f;
-            fuelSlider.value -= 3f;
+            player.angularVelocity = Vector3.zero;
+            fuelSlider.value -= 0.3f;
         }
     }
 

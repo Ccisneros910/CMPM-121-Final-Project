@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - damage
+  - bounce
+  - heal
+  - player
+  - door1
+  - door2
   layers:
   - Default
   - TransparentFX
