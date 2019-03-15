@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     public float rotationRate = 45;
 
-    public float moveSpeed = 0f;
+    public float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +48,13 @@ public class Player : MonoBehaviour
          */
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "bounce")
+        {
+            moveSpeed = -moveSpeed * 3;
+        }
+    }
     private void ApplyInput(float H, float V, bool F, bool B, bool S)
     {
         turnH(H);
@@ -111,14 +118,14 @@ public class Player : MonoBehaviour
             {
                 while(moveSpeed > 0)
                 {
-                    moveSpeed -= 0.000000001f;
+                    moveSpeed = moveSpeed/1.001f;
                 }
             }
             else if (moveSpeed < 0)
             {
                 while (moveSpeed < 0)
                 {
-                    moveSpeed += 0.00000001f;
+                    moveSpeed = moveSpeed/1.001f;
                 }
             }
             player.angularVelocity = Vector3.zero;

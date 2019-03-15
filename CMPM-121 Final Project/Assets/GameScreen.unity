@@ -238,7 +238,7 @@ GameObject:
   m_Layer: 0
   m_Name: target (26)
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -729,6 +729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBall
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: c455996f6e6b49d418895f41b5216202, type: 3}
+      propertyPath: m_TagString
+      value: damage
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c455996f6e6b49d418895f41b5216202, type: 3}
       propertyPath: m_LocalPosition.x
       value: 265.70526
@@ -961,6 +965,10 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
       propertyPath: m_Name
       value: SplitMetalBall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
+      propertyPath: m_TagString
+      value: bounce
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1219,7 +1227,7 @@ GameObject:
   m_Layer: 0
   m_Name: target (24)
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4700,6 +4708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SplitMetalBall
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
+      propertyPath: m_TagString
+      value: bounce
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 283.8691
@@ -6847,6 +6859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SplitMetalBall (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
+      propertyPath: m_TagString
+      value: bounce
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 273.55
@@ -7295,7 +7311,7 @@ GameObject:
   m_Layer: 0
   m_Name: target (27)
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8230,6 +8246,10 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
       propertyPath: m_Name
       value: SplitMetalBall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
+      propertyPath: m_TagString
+      value: bounce
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12662,6 +12682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SplitMetalBall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
+      propertyPath: m_TagString
+      value: bounce
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 264.8
@@ -12746,6 +12770,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1930384580
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930384577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1931275984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13220,7 +13257,7 @@ GameObject:
   m_Layer: 0
   m_Name: target (25)
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13475,8 +13512,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6455062, guid: 496fa247adc61d44ebaeaf9d72671287, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496fa247adc61d44ebaeaf9d72671287, type: 3}
+--- !u!1 &2056520167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 167654, guid: 496fa247adc61d44ebaeaf9d72671287,
+    type: 3}
+  m_PrefabInstance: {fileID: 2056520166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2056520168
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056520167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.3996024, y: 5.078299, z: 6.6792994}
+  m_Center: {x: -0.007370372, y: 2.0391488, z: -0.3048461}
 --- !u!1001 &2069516729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13556,6 +13616,10 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
       propertyPath: m_Name
       value: SplitMetalBall (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
+      propertyPath: m_TagString
+      value: bounce
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13641,6 +13705,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &2075037529
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075037526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2088885397
 PrefabInstance:
   m_ObjectHideFlags: 0
