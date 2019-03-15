@@ -10,6 +10,7 @@ TagManager:
   - player
   - door1
   - door2
+  - Boundary
   layers:
   - Default
   - TransparentFX

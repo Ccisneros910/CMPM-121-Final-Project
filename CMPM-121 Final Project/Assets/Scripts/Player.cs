@@ -12,8 +12,9 @@ public class Player : MonoBehaviour
     public Slider fuelSlider;
 
     public float rotationRate = 45;
-
     public float moveSpeed;
+    private int health;
+    public Image[] hearts;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
         fuelSlider.minValue = 0;
         fuelSlider.maxValue = 100;
         fuelSlider.value = 100;
+        health = 5;
     }
 
     // Update is called once per frame
@@ -53,6 +55,16 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "bounce")
         {
             moveSpeed = -moveSpeed * 3;
+        }
+        if(collision.gameObject.tag == "damage")
+        {
+            hearts[health - 1].color = new Color(0.5f, 0.5f, 0.5f);
+            health -= 1;
+            moveSpeed = -0.02f;
+            if(health == 0)
+            {
+                Debug.Log("GAME OVER");
+            }
         }
     }
     private void ApplyInput(float H, float V, bool F, bool B, bool S)
@@ -118,14 +130,14 @@ public class Player : MonoBehaviour
             {
                 while(moveSpeed > 0)
                 {
-                    moveSpeed = moveSpeed/1.001f;
+                    moveSpeed -= 0.001f;
                 }
             }
             else if (moveSpeed < 0)
             {
                 while (moveSpeed < 0)
                 {
-                    moveSpeed = moveSpeed/1.001f;
+                    moveSpeed += 0.001f;
                 }
             }
             player.angularVelocity = Vector3.zero;
@@ -133,5 +145,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void DamageTaken()
+    {
 
+    }
+    private void GameOver()
+    {
+
+    }
 }
