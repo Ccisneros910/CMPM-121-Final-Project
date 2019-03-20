@@ -23,7 +23,7 @@ public class Obstacle : MonoBehaviour
     {
         if(this.tag =="damage" && collision.gameObject.name == "SpaceMan")
         {
-            Debug.Log("spaceman hit!");
+            //Debug.Log("spaceman hit!");
         }
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - door1
   - door2
   - Boundary
+  - refuel
   layers:
   - Default
   - TransparentFX

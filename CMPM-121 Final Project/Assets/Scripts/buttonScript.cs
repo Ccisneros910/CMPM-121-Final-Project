@@ -13,7 +13,7 @@ public class buttonScript : MonoBehaviour
     void Start()
     {
         thisB = GetComponent<Button>();
-        thisB.onClick.AddListener(PlayClip);
+        //thisB.onClick.AddListener(PlayClip);
     }
 
     // Update is called once per frame
@@ -24,6 +24,6 @@ public class buttonScript : MonoBehaviour
 
     void PlayClip()
     {
-        c.PlayOneShot(click);
+        //c.PlayOneShot(click);
     }
 }
