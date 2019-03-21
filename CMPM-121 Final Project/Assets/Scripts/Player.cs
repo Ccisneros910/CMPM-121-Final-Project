@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class Player : MonoBehaviour
     private string moveInput = "Vertical";
     public Slider fuelSlider;
     private float fuelDifference;
-    public Text endText;
+    public Text FuelEmpty, HPEmpty;
 
     public float rotationRate = 45;
     public float moveSpeed;
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
         {
             JetPackControl();
             ApplyInput(AxisH, AxisV, moveForward, moveBack, stopMovement);
+            StartCoroutine(CheckIfGameOver());
         }
         else
         {
@@ -54,16 +57,9 @@ public class Player : MonoBehaviour
             {
                 airSpray[i].Stop();
             }
+            StartCoroutine(CheckIfGameOver());
         }
         transform.Translate(Vector3.forward * 1 * moveSpeed);
-
-        /*
-         if (Input.GetKey(KeyCode.A))
-         {
-            Quaternion deltaRotation = Quaternion.Euler(EulerAngleVelocity * Time.deltaTime);
-            player.MoveRotation(player.rotation * deltaRotation);
-         }
-         */
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -94,14 +90,6 @@ public class Player : MonoBehaviour
             fuelSlider.value = fuelSlider.maxValue;
         }
         */
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name == "projector stars")
-        {
-            endText.enabled = true;
-        }
     }
     /*
     public void onTriggerEnter(Collider other)
@@ -287,12 +275,21 @@ public class Player : MonoBehaviour
 
     }
 
-    private void DamageTaken()
+    public IEnumerator CheckIfGameOver()
     {
-
-    }
-    private void GameOver()
-    {
-
+        Debug.Log("Check game over working");
+        if(fuelSlider.value <= 0)
+        {
+            FuelEmpty.enabled = true;
+            yield return new WaitForSeconds(5);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+        if(health == 0)
+        {
+            HPEmpty.enabled = true;
+            yield return new WaitForSeconds(5);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+        yield return new WaitForSeconds(0);
     }
 }
